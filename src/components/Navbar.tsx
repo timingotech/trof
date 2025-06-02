@@ -50,7 +50,7 @@ const Navbar = () => {
           shadow-lg shadow-black/5
           border border-white/20
           transition-all duration-300 ease-out
-          ${scrolled ? 'py-2 shadow-xl shadow-black/10' : 'py-2'}
+          ${scrolled ? 'py-0 shadow-xl shadow-black/10' : 'py-0'}
         `}>
           <div className="px-6 md:px-8">
             <div className="flex justify-between items-center">
@@ -67,7 +67,7 @@ const Navbar = () => {
                   <a 
                     key={item.name} 
                     href={item.path} 
-                    className="font-medium transition-all duration-300 text-gray-700 hover:text-white hover:bg-red-600 px-4 py-2 rounded-lg"
+                    className="font-medium transition-all duration-300 text-gray-700 hover:text-white hover:bg-red-600 px-4 py-0 rounded-lg"
                   >
                     {item.name}
                   </a>
