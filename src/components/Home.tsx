@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Heart, Users, BookOpen, Brain, Target, Eye, Lightbulb, TrendingUp, ArrowRight, Quote, Star, Globe, Award } from 'lucide-react';
+import {Heart, Users, BookOpen, Brain, Target, Lightbulb, TrendingUp, ArrowRight, Quote, Globe, Award } from 'lucide-react';
 
 const TROFHomepage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
