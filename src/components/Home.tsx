@@ -1,6 +1,15 @@
 import { useState, useEffect } from 'react';
-import {Heart, Users, BookOpen, Brain, Target, Lightbulb, TrendingUp, ArrowRight, Quote, Globe, Award } from 'lucide-react';
-
+import { Link } from 'react-router-dom';
+import {Heart, Users, BookOpen, Brain, Target, Lightbulb, TrendingUp, ArrowRight, Quote, Award } from 'lucide-react';
+import Image1 from '../assets/Image1.jpg'
+import Image2 from '../assets/Image2.jpg'
+import Image3 from '../assets/Image3.jpg'
+import Image4 from '../assets/Image4.jpg'
+import Image5 from '../assets/Image5.jpg'
+import Image6 from '../assets/Fgn.png'
+import Image7 from '../assets/Fhfa.jpg'
+import Image8 from '../assets/Vtgc.jpg'
+import Image9 from '../assets/Ycc.jpg'
 const TROFHomepage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -9,16 +18,24 @@ const TROFHomepage = () => {
   // Hero carousel data
   const heroSlides = [
     {
-      image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiPI0CBt9WX3HaRdGSWO8vwONdNoScDC1MWKL_xEvJCX9w2DiWkIs9xPSl1zAn_lCywJnVw8J2BCw_cIx8mpu7tzfFdm9Ly7XG-TdTO-yD7KtNpubxpCWgA-8mge-5UCHKP1eVI0CyGSmbiX-BWNT6gViiAjRh6pX7txwJKdVTsb9T2z0ahBV6nWcmdHvo/w1684-h1069-p-k-no-nu/IMG_2340.TIF.jpg",
+      image: Image1,
       alt: "Mental health support for youth"
     },
     {
-      image: "https://images.unsplash.com/photo-1497486751825-1233686d5d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+      image: Image2,
       alt: "Students in underserved communities"
     },
     {
-      image: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+      image: Image3,
       alt: "TROF team outreach"
+    },
+    {
+      image: Image4,
+      alt: "Students in underserved communities"
+    },
+    {
+      image: Image5,
+      alt: "Students in underserved communities"
     }
   ];
 
@@ -26,17 +43,17 @@ const TROFHomepage = () => {
   const programs = [
     {
       icon: <Brain className="w-8 h-8" />,
-      title: "Mental Health Outreach",
-      description: "Providing accessible mental health support and awareness programs for underserved communities across Africa."
+      title: "Child Protection Initiatives",
+      description: "Providing safe spaces for vulnerable children"
     },
     {
       icon: <BookOpen className="w-8 h-8" />,
-      title: "Education Scholarships",
+      title: "Educational & Developmental Programs",
       description: "Empowering bright minds with educational opportunities and scholarships to break the cycle of poverty."
     },
     {
       icon: <Users className="w-8 h-8" />,
-      title: "Community Development",
+      title: "Community Engagement & Advocacy",
       description: "Building sustainable infrastructure and programs that create lasting positive change in local communities."
     },
     {
@@ -91,8 +108,8 @@ const TROFHomepage = () => {
     {
       quote: "The youth empowerment workshops gave me the confidence to start my own social enterprise.",
       name: "Grace Mutua",
-      location: "Nairobi, Kenya",
-      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+      location: "Lagos, Nigeria",
+      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.3&auto=format&fit=crop&w=150&q=80"
     }
   ];
 
@@ -121,7 +138,7 @@ const TROFHomepage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white mt-7">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* Background Carousel */}
@@ -140,24 +157,23 @@ const TROFHomepage = () => {
               />
             </div>
           ))}
-          <div className="absolute inset-0 bg-black bg-opacity-40"></div>
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+        <div className="relative z-10 text-center  px-4 max-w-4xl mx-auto">
+        <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight bg-white/20 text-black rounded-3xl">
             Building a Healthier, Brighter Future — One Life at a Time.
           </h1>
-          <p className="text-xl md:text-2xl mb-8 opacity-90">
+          <p className="text-xl md:text-2xl mb-8 opacity-90 leading-tight bg-white/20 text-black rounded-xl">
             Through education, wellness, and community empowerment, TROF Foundation is changing narratives across Africa.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex justify-center">
+            <Link to="/donate">
             <button className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
               Donate Now
             </button>
-            <button className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-red-600 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105">
-              Join Our Mission
-            </button>
+            </Link>
+            
           </div>
         </div>
 
@@ -174,7 +190,6 @@ const TROFHomepage = () => {
           ))}
         </div>
       </section>
-
       {/* About Section */}
       <section className="py-20 bg-gradient-to-br from-sky-50 to-green-50">
         <div className="container mx-auto px-4">
@@ -187,7 +202,7 @@ const TROFHomepage = () => {
               dedicated to breaking barriers and building bridges to a better future through compassionate action and sustainable change.
             </p>
             <div className="bg-white rounded-lg p-8 shadow-lg inline-block">
-              <div className="text-4xl font-bold text-red-600 mb-2">12,000+</div>
+              <div className="text-4xl font-bold text-red-600 mb-2">1,000+</div>
               <div className="text-gray-600">Lives positively impacted in 3 years</div>
             </div>
           </div>
@@ -295,19 +310,19 @@ const TROFHomepage = () => {
             <p className="text-gray-600">Trusted partnerships that amplify our impact</p>
           </div>
 
-          <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
+          <div className="flex flex-wrap justify-center items-center gap-8  ">
             {/* Placeholder partner logos */}
-            <div className="bg-gray-200 h-16 w-32 rounded-lg flex items-center justify-center hover:opacity-100 transition-opacity duration-300">
-              <Globe className="w-8 h-8 text-gray-400" />
+            <div className=" h-16 w-32 rounded-lg flex items-center justify-center   ">
+              <img src={Image6} alt="Partner 1" className="w-32 h-16 object-contain" />
             </div>
-            <div className="bg-gray-200 h-16 w-32 rounded-lg flex items-center justify-center hover:opacity-100 transition-opacity duration-300">
-              <Award className="w-8 h-8 text-gray-400" />
+            <div className=" h-16 w-32 rounded-lg flex items-center justify-center">
+              <img src={Image7} alt="Partner 2" className="w-32 h-16 object-contain" />
             </div>
-            <div className="bg-gray-200 h-16 w-32 rounded-lg flex items-center justify-center hover:opacity-100 transition-opacity duration-300">
-              <Users className="w-8 h-8 text-gray-400" />
+            <div className=" h-16 w-32 rounded-lg flex items-center justify-center">
+              <img src={Image8} alt="Partner 3" className="w-32 h-16 object-contain" />
             </div>
-            <div className="bg-gray-200 h-16 w-32 rounded-lg flex items-center justify-center hover:opacity-100 transition-opacity duration-300">
-              <Heart className="w-8 h-8 text-gray-400" />
+            <div className=" h-16 w-32 rounded-lg flex items-center justify-center">
+              <img src={Image9} alt="Partner 4" className="w-32 h-16 object-contain" />
             </div>
           </div>
         </div>

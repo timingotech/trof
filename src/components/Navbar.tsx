@@ -34,7 +34,7 @@ const Navbar = () => {
   const navItems = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
-    { name: 'Programs', path: '/programs' },
+    { name: 'Team', path: '/team' },
     { name: 'Join Us', path: '/join-us' },
     { name: 'Contact', path: '/contact' },
   ];
@@ -67,7 +67,7 @@ const Navbar = () => {
                   <a 
                     key={item.name} 
                     href={item.path} 
-                    className="font-medium transition-all duration-300 text-gray-700 hover:text-white hover:bg-red-600 px-4 py-0 rounded-lg"
+                    className="font-medium transition-all duration-300 text-gray-700 hover:text-white hover:bg-red-600 px-4 py-2 rounded-full"
                   >
                     {item.name}
                   </a>
