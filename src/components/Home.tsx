@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import {Heart, Users, BookOpen, Brain, Target, Lightbulb, TrendingUp, ArrowRight, Quote, Award } from 'lucide-react';
 import Image1 from '../assets/Image1.jpg'
 import Image2 from '../assets/Image2.jpg'
@@ -7,9 +6,10 @@ import Image3 from '../assets/Image3.jpg'
 import Image4 from '../assets/Image4.jpg'
 import Image5 from '../assets/Image5.jpg'
 import Image6 from '../assets/Fgn.png'
-import Image7 from '../assets/Fhfa.jpg'
+import Image7 from '../assets/Fhfa-removebg-preview.png'
 import Image8 from '../assets/Vtgc.jpg'
 import Image9 from '../assets/Ycc.jpg'
+import Image10 from '../assets/SereniMind.jpg'
 const TROFHomepage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -160,22 +160,6 @@ const TROFHomepage = () => {
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 text-center  px-4 max-w-4xl mx-auto">
-        <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight bg-white/20 text-black rounded-3xl">
-            Building a Healthier, Brighter Future — One Life at a Time.
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 opacity-90 leading-tight bg-white/20 text-black rounded-xl">
-            Through education, wellness, and community empowerment, TROF Foundation is changing narratives across Africa.
-          </p>
-          <div className="flex justify-center">
-            <Link to="/donate">
-            <button className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
-              Donate Now
-            </button>
-            </Link>
-            
-          </div>
-        </div>
 
         {/* Carousel Navigation Dots */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
@@ -323,6 +307,9 @@ const TROFHomepage = () => {
             </div>
             <div className=" h-16 w-32 rounded-lg flex items-center justify-center">
               <img src={Image9} alt="Partner 4" className="w-32 h-16 object-contain" />
+            </div>
+            <div className=" h-16 w-32 rounded-lg flex items-center justify-center">
+              <img src={Image10} alt="Partner 4" className="w-32 h-16 object-contain" />
             </div>
           </div>
         </div>

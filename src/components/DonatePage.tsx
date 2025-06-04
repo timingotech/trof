@@ -16,13 +16,13 @@ const DonatePage = () => {
 
   const bankAccounts: Record<Currency, BankAccount> = {
     USD: {
-      bank: "UBA",
+      bank: "United Bank of Africa",
       name: "THE RAYMOND OFODU FOUNDATION",
       account: "3004696679",
       currency: "US Dollar ($)"
     },
     NGN: {
-      bank: "UBA", 
+      bank: "United Bank of Africa", 
       name: "THE RAYMOND OFODU FOUNDATION",
       account: "1027856616",
       currency: "Nigerian Naira (₦)"
