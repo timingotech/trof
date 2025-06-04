@@ -156,45 +156,48 @@ const TROFHomepage = () => {
   return (
     <div className="min-h-screen bg-white mt-7">
       {/* Hero Section */}
-      <section className="relative h-auto md:h-screen  flex items-center justify-center overflow-hidden">
-        {/* Background Carousel */}
-      <div className="relative w-screen h-screen overflow-hidden m-0 p-0 mt-[-175px] md:mt-0 md:absolute inset-0 ">
-        <div className="absolute inset-0">
-          {heroSlides.map((slide, index) => (
-            <div
-              key={index}
-              className={`absolute inset-0 transition-opacity duration-1000 ${
-                index === currentSlide ? 'opacity-100' : 'opacity-0'
-              }`}
-            >
-              <img
-                src={slide.image}
-                alt={slide.alt}
-                className="w-full h-full object-contain"
-              />
-            </div>
-          ))}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden mt-[-50px] md:mt-0">
+  {/* Background Carousel */}
+  <div className="absolute inset-0 w-full h-full">
+    <div className="relative w-full h-full">
+      {heroSlides.map((slide, index) => (
+        <div
+          key={index}
+          className={`absolute inset-0 transition-opacity duration-1000 ${
+            index === currentSlide ? 'opacity-100' : 'opacity-0'
+          }`}
+        >
+          <img
+            src={slide.image}
+            alt={slide.alt}
+            className="w-full h-full object-contain md:object-cover"
+          />
         </div>
-      </div>
+      ))}
+    </div>
+  </div>
 
+  {/* Hero Content - Add your content here */}
+  <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8">
+    {/* Your hero content goes here */}
+  </div>
 
-        {/* Hero Content */}
-
-        {/* Carousel Navigation Dots */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
-          {heroSlides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentSlide ? 'bg-white' : 'bg-white bg-opacity-50'
-              }`}
-            />
-          ))}
-        </div>
-      </section>
+  {/* Carousel Navigation Dots */}
+  <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+    {heroSlides.map((_, index) => (
+      <button
+        key={index}
+        onClick={() => setCurrentSlide(index)}
+        className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
+          index === currentSlide ? 'bg-white scale-110' : 'bg-white bg-opacity-50 hover:bg-opacity-75'
+        }`}
+        aria-label={`Go to slide ${index + 1}`}
+      />
+    ))}
+  </div>
+</section>
       {/* About Section */}
-      <section className="py-20 bg-gradient-to-br from-sky-50 to-green-50 mt-[-190px] md:mt-0">
+      <section className="py-20 bg-gradient-to-br from-sky-50 to-green-50 mt-[-50px] md:mt-0">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
