@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import {Heart, Users, BookOpen, Brain, Target, Lightbulb, TrendingUp, ArrowRight, Quote, Award } from 'lucide-react';
 import Image2 from '../assets/Image1.jpg'
 import Image1 from '../assets/Image2.jpg'
@@ -177,9 +178,13 @@ const TROFHomepage = () => {
     </div>
   </div>
 
-  {/* Hero Content - Add your content here */}
-  <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8">
-    {/* Your hero content goes here */}
+  {/* Hero Content - Positioned at bottom */}
+  <div className="absolute bottom-16 sm:bottom-20 md:bottom-24 left-1/2 transform -translate-x-1/2 z-10">
+    <Link to="/donate">
+      <button className="bg-red-500 cursor-pointer hover:bg-red-600 text-white font-bold py-3 px-8 sm:py-4 sm:px-10 rounded-full transition-all duration-300 hover:scale-105 shadow-lg">
+        Donate Now
+      </button>
+    </Link>
   </div>
 
   {/* Carousel Navigation Dots */}
