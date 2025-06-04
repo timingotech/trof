@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail, Clock, Heart, Facebook, Twitter, Instagram, Linkedin, Youtube, ArrowRight } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Heart, Facebook, Twitter, Instagram, Linkedin, ArrowRight } from 'lucide-react';
 import LogoMain from '../assets/LogoMain.png';
 
 const Footer = () => {
@@ -20,11 +20,10 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { name: 'Facebook', icon: Facebook, url: '#', color: 'hover:text-blue-600' },
+    { name: 'Facebook', icon: Facebook, url: 'https://www.facebook.com/share/14tGt3TNi4/', color: 'hover:text-blue-600' },
     { name: 'Twitter', icon: Twitter, url: '#', color: 'hover:text-blue-400' },
-    { name: 'Instagram', icon: Instagram, url: '#', color: 'hover:text-pink-600' },
-    { name: 'LinkedIn', icon: Linkedin, url: '#', color: 'hover:text-blue-700' },
-    { name: 'YouTube', icon: Youtube, url: '#', color: 'hover:text-red-600' }
+    { name: 'Instagram', icon: Instagram, url: 'https://www.instagram.com/trof_foundation', color: 'hover:text-pink-600' },
+    { name: 'LinkedIn', icon: Linkedin, url: 'https://www.linkedin.com/company/the-raymond-ofodu-foundation/', color: 'hover:text-blue-700' },
   ];
 
   return (

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import {Heart, Users, BookOpen, Brain, Target, Lightbulb, TrendingUp, ArrowRight, Quote, Award } from 'lucide-react';
-import Image1 from '../assets/Image1.jpg'
-import Image2 from '../assets/Image2.jpg'
+import Image2 from '../assets/Image1.jpg'
+import Image1 from '../assets/Image2.jpg'
 import Image3 from '../assets/Image3.jpg'
 import Image4 from '../assets/Image4.jpg'
 import Image5 from '../assets/Image5.jpg'
@@ -10,6 +10,10 @@ import Image7 from '../assets/Fhfa-removebg-preview.png'
 import Image8 from '../assets/Vtgc.jpg'
 import Image9 from '../assets/Ycc.jpg'
 import Image10 from '../assets/SereniMind.jpg'
+import Image11 from '../assets/Image11.jpg'
+import Image12 from '../assets/Image12.jpg'
+import Image13 from '../assets/Image13.jpg'
+
 const TROFHomepage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -35,6 +39,18 @@ const TROFHomepage = () => {
     },
     {
       image: Image5,
+      alt: "Students in underserved communities"
+    },
+    {
+      image: Image11,
+      alt: "TROF team outreach"
+    },
+    {
+      image: Image12,
+      alt: "Students in underserved communities"
+    },
+    {
+      image: Image13,
       alt: "Students in underserved communities"
     }
   ];
@@ -140,8 +156,9 @@ const TROFHomepage = () => {
   return (
     <div className="min-h-screen bg-white mt-7">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative h-auto md:h-screen  flex items-center justify-center overflow-hidden">
         {/* Background Carousel */}
+      <div className="relative w-screen h-screen overflow-hidden m-0 p-0 mt-[-160px] md:mt-0 md:absolute inset-0 ">
         <div className="absolute inset-0">
           {heroSlides.map((slide, index) => (
             <div
@@ -153,11 +170,13 @@ const TROFHomepage = () => {
               <img
                 src={slide.image}
                 alt={slide.alt}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
               />
             </div>
           ))}
         </div>
+      </div>
+
 
         {/* Hero Content */}
 
@@ -175,14 +194,14 @@ const TROFHomepage = () => {
         </div>
       </section>
       {/* About Section */}
-      <section className="py-20 bg-gradient-to-br from-sky-50 to-green-50">
+      <section className="py-20 bg-gradient-to-br from-sky-50 to-green-50 mt-[-215px] md:mt-0">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
               About TROF Foundation
             </h2>
             <p className="text-xl text-gray-600 mb-8">
-              Born from a vision to transform lives across Africa, TROF Foundation stands as a beacon of hope, 
+              Born from a vision to transform lives across Africa, The Raymond Ofodu Foundation stands as a beacon of hope, 
               dedicated to breaking barriers and building bridges to a better future through compassionate action and sustainable change.
             </p>
             <div className="bg-white rounded-lg p-8 shadow-lg inline-block">
@@ -205,7 +224,7 @@ const TROFHomepage = () => {
                 <p className="text-gray-600">{value.description}</p>
               </div>
             ))}
-          </div>
+          </div>  
         </div>
       </section>
 
