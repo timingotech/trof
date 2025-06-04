@@ -158,7 +158,7 @@ const TROFHomepage = () => {
       {/* Hero Section */}
       <section className="relative h-auto md:h-screen  flex items-center justify-center overflow-hidden">
         {/* Background Carousel */}
-      <div className="relative w-screen h-screen overflow-hidden m-0 p-0 mt-[-160px] md:mt-0 md:absolute inset-0 ">
+      <div className="relative w-screen h-screen overflow-hidden m-0 p-0 mt-[-175px] md:mt-0 md:absolute inset-0 ">
         <div className="absolute inset-0">
           {heroSlides.map((slide, index) => (
             <div
@@ -194,7 +194,7 @@ const TROFHomepage = () => {
         </div>
       </section>
       {/* About Section */}
-      <section className="py-20 bg-gradient-to-br from-sky-50 to-green-50 mt-[-215px] md:mt-0">
+      <section className="py-20 bg-gradient-to-br from-sky-50 to-green-50 mt-[-190px] md:mt-0">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
