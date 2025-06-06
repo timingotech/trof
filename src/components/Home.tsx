@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import {Heart, Users, BookOpen, Brain, Target, Lightbulb, TrendingUp, ArrowRight, Quote, Award } from 'lucide-react';
+import {Users, BookOpen, Brain, Target, ArrowRight, Quote, Calendar, Clock } from 'lucide-react';
+import { getRecentBlogs } from './BlogData'; // Import the function to get recent blogs
 import Image2 from '../assets/Image1.jpg'
 import Image1 from '../assets/Image2.jpg'
 import Image3 from '../assets/Image3.jpg'
@@ -19,6 +20,48 @@ const TROFHomepage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [currentStep, setCurrentStep] = useState(0);
+  const [counters, setCounters] = useState({
+    children: 0,
+    communities: 0,
+    testimonials: 0
+  });
+
+  // Get recent blogs
+  const recentBlogs = getRecentBlogs(3); // Get 3 most recent blogs
+
+  useEffect(() => {
+    const animateCounters = () => {
+      const duration = 2000;
+      const steps = 60;
+      const targets = { children: 1000, communities: 25, testimonials: 500 };
+      
+      let step = 0;
+      const timer = setInterval(() => {
+        step++;
+        const progress = step / steps;
+        
+        setCounters({
+          children: Math.floor(targets.children * progress),
+          communities: Math.floor(targets.communities * progress),
+          testimonials: Math.floor(targets.testimonials * progress)
+        });
+
+        if (step >= steps) clearInterval(timer);
+      }, duration / steps);
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        animateCounters();
+        observer.disconnect();
+      }
+    });
+
+    const element = document.getElementById('impact-section');
+    if (element) observer.observe(element);
+
+    return () => observer.disconnect();
+  }, []);
 
   // Hero carousel data
   const heroSlides = [
@@ -79,14 +122,7 @@ const TROFHomepage = () => {
       description: "Developing leadership skills and providing opportunities for young people to become agents of change."
     }
   ];
-
-  // Core values data
-  const coreValues = [
-    { icon: <Heart className="w-6 h-6" />, title: "Empathy", description: "Understanding and compassion in all we do" },
-    { icon: <Award className="w-6 h-6" />, title: "Accountability", description: "Transparent and responsible stewardship" },
-    { icon: <Lightbulb className="w-6 h-6" />, title: "Innovation", description: "Creative solutions for complex challenges" },
-    { icon: <TrendingUp className="w-6 h-6" />, title: "Impact", description: "Measurable change that transforms lives" }
-  ];
+ 
 
   // How it works steps
   const steps = [
@@ -158,49 +194,50 @@ const TROFHomepage = () => {
     <div className="min-h-screen bg-white mt-7">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden mt-[-50px] md:mt-0">
-  {/* Background Carousel */}
-  <div className="absolute inset-0 w-full h-full">
-    <div className="relative w-full h-full">
-      {heroSlides.map((slide, index) => (
-        <div
-          key={index}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
-            index === currentSlide ? 'opacity-100' : 'opacity-0'
-          }`}
-        >
-          <img
-            src={slide.image}
-            alt={slide.alt}
-            className="w-full h-full object-contain md:object-cover"
-          />
+        {/* Background Carousel */}
+        <div className="absolute inset-0 w-full h-full">
+          <div className="relative w-full h-full">
+            {heroSlides.map((slide, index) => (
+              <div
+                key={index}
+                className={`absolute inset-0 transition-opacity duration-1000 ${
+                  index === currentSlide ? 'opacity-100' : 'opacity-0'
+                }`}
+              >
+                <img
+                  src={slide.image}
+                  alt={slide.alt}
+                  className="w-full h-full object-contain md:object-cover"
+                />
+              </div>
+            ))}
+          </div>
         </div>
-      ))}
-    </div>
-  </div>
 
-  {/* Hero Content - Positioned at bottom */}
-  <div className="absolute bottom-16 sm:bottom-20 md:bottom-24 left-1/2 transform -translate-x-1/2 z-10">
-    <Link to="/donate">
-      <button className="bg-red-500 cursor-pointer hover:bg-red-600 text-white font-bold py-3 px-8 sm:py-4 sm:px-10 rounded-full transition-all duration-300 hover:scale-105 shadow-lg">
-        Donate Now
-      </button>
-    </Link>
-  </div>
+        {/* Hero Content - Positioned at bottom */}
+        <div className="absolute bottom-16 sm:bottom-20 md:bottom-24 left-1/2 transform -translate-x-1/2 z-10">
+          <Link to="/donate">
+            <button className="bg-red-500 cursor-pointer hover:bg-red-600 text-white font-bold py-3 px-8 sm:py-4 sm:px-10 rounded-full transition-all duration-300 hover:scale-105 shadow-lg">
+              Donate Now
+            </button>
+          </Link>
+        </div>
 
-  {/* Carousel Navigation Dots */}
-  <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
-    {heroSlides.map((_, index) => (
-      <button
-        key={index}
-        onClick={() => setCurrentSlide(index)}
-        className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
-          index === currentSlide ? 'bg-white scale-110' : 'bg-white bg-opacity-50 hover:bg-opacity-75'
-        }`}
-        aria-label={`Go to slide ${index + 1}`}
-      />
-    ))}
-  </div>
-</section>
+        {/* Carousel Navigation Dots */}
+        <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+          {heroSlides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
+                index === currentSlide ? 'bg-white scale-110' : 'bg-white bg-opacity-50 hover:bg-opacity-75'
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
+      </section>
+
       {/* About Section */}
       <section className="py-20 bg-gradient-to-br from-sky-50 to-green-50 mt-[-50px] md:mt-0">
         <div className="container mx-auto px-4">
@@ -212,27 +249,34 @@ const TROFHomepage = () => {
               Born from a vision to transform lives across Africa, The Raymond Ofodu Foundation stands as a beacon of hope, 
               dedicated to breaking barriers and building bridges to a better future through compassionate action and sustainable change.
             </p>
-            <div className="bg-white rounded-lg p-8 shadow-lg inline-block">
-              <div className="text-4xl font-bold text-red-600 mb-2">1,000+</div>
-              <div className="text-gray-600">Lives positively impacted in 3 years</div>
-            </div>
-          </div>
-
-          {/* Core Values */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {coreValues.map((value, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 text-center"
-              >
-                <div className="bg-sky-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-sky-600">
-                  {value.icon}
+            {/* Our Impact */}
+            <section id="impact-section" className="py-20 px-4 bg-gradient-to-b from-red-50 to-white">
+              <div className="max-w-6xl mx-auto text-center">
+                <h2 className="text-4xl font-bold text-gray-800 mb-6">Changing Lives, One Child at a Time</h2>
+                <p className="text-xl text-gray-600 mb-16">Our impact speaks through the lives we've touched and the communities we've transformed.</p>
+                
+                <div className="grid md:grid-cols-3 gap-8 mb-16">
+                  <div className="bg-white p-8 rounded-2xl shadow-lg">
+                    <div className="text-4xl font-bold text-red-600 mb-2">{counters.children.toLocaleString()}+</div>
+                    <div className="text-gray-800 font-semibold mb-2">Children Supported</div>
+                    <div className="text-gray-600">With education and protection services</div>
+                  </div>
+                  
+                  <div className="bg-white p-8 rounded-2xl shadow-lg">
+                    <div className="text-4xl font-bold text-red-600 mb-2">{counters.communities}+</div>
+                    <div className="text-gray-800 font-semibold mb-2">Communities Reached</div>
+                    <div className="text-gray-600">Lower child abuse rates achieved</div>
+                  </div>
+                  
+                  <div className="bg-white p-8 rounded-2xl shadow-lg">
+                    <div className="text-4xl font-bold text-red-600 mb-2">{counters.testimonials}+</div>
+                    <div className="text-gray-800 font-semibold mb-2">Testimonials</div>
+                    <div className="text-gray-600">From grateful families</div>
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">{value.title}</h3>
-                <p className="text-gray-600">{value.description}</p>
               </div>
-            ))}
-          </div>  
+            </section>
+          </div>
         </div>
       </section>
 
@@ -261,6 +305,81 @@ const TROFHomepage = () => {
                 <p className="text-gray-600 leading-relaxed">{program.description}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Latest Blog Posts Section */}
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-sky-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+              Latest Stories & Updates
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Stay informed about our latest impact stories, program updates, and community transformations.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
+            {recentBlogs.map((blog) => (
+              <div
+                key={blog.id}
+                className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group"
+              >
+                <div className="relative overflow-hidden">
+                  <img
+                    src={blog.image}
+                    alt={blog.title}
+                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-red-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                      {blog.category}
+                    </span>
+                  </div>
+                </div>
+                
+                <div className="p-6">
+                  <div className="flex items-center text-gray-500 text-sm mb-3">
+                    <Calendar className="w-4 h-4 mr-1" />
+                    <span className="mr-4">{new Date(blog.date).toLocaleDateString()}</span>
+                    <Clock className="w-4 h-4 mr-1" />
+                    <span>{blog.readTime}</span>
+                  </div>
+                  
+                  <h3 className="text-xl font-semibold text-gray-800 mb-3 line-clamp-2">
+                    {blog.title}
+                  </h3>
+                  
+                  <p className="text-gray-600 mb-4 line-clamp-3">
+                    {blog.excerpt}
+                  </p>
+                  
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-gray-500">By {blog.author}</span>
+                    <Link
+                      to={`/blog/${blog.id}`}
+                      className="inline-flex items-center text-red-600 hover:text-red-700 font-medium transition-colors duration-300"
+                    >
+                      Read More
+                      <ArrowRight className="ml-2 w-4 h-4" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* View All Blogs Button */}
+          <div className="text-center">
+            <Link
+              to="/blogs"
+              className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg inline-flex items-center"
+            >
+              View All Stories
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Link>
           </div>
         </div>
       </section>
@@ -321,22 +440,21 @@ const TROFHomepage = () => {
             <p className="text-gray-600">Trusted partnerships that amplify our impact</p>
           </div>
 
-          <div className="flex flex-wrap justify-center items-center gap-8  ">
-            {/* Placeholder partner logos */}
-            <div className=" h-16 w-32 rounded-lg flex items-center justify-center   ">
+          <div className="flex flex-wrap justify-center items-center gap-8">
+            <div className="h-16 w-32 rounded-lg flex items-center justify-center">
               <img src={Image6} alt="Partner 1" className="w-32 h-16 object-contain" />
             </div>
-            <div className=" h-16 w-32 rounded-lg flex items-center justify-center">
+            <div className="h-16 w-32 rounded-lg flex items-center justify-center">
               <img src={Image7} alt="Partner 2" className="w-32 h-16 object-contain" />
             </div>
-            <div className=" h-16 w-32 rounded-lg flex items-center justify-center">
+            <div className="h-16 w-32 rounded-lg flex items-center justify-center">
               <img src={Image8} alt="Partner 3" className="w-32 h-16 object-contain" />
             </div>
-            <div className=" h-16 w-32 rounded-lg flex items-center justify-center">
+            <div className="h-16 w-32 rounded-lg flex items-center justify-center">
               <img src={Image9} alt="Partner 4" className="w-32 h-16 object-contain" />
             </div>
-            <div className=" h-16 w-32 rounded-lg flex items-center justify-center">
-              <img src={Image10} alt="Partner 4" className="w-32 h-16 object-contain" />
+            <div className="h-16 w-32 rounded-lg flex items-center justify-center">
+              <img src={Image10} alt="Partner 5" className="w-32 h-16 object-contain" />
             </div>
           </div>
         </div>
@@ -418,7 +536,6 @@ const TROFHomepage = () => {
           </div>
         </div>
       </section>
- 
     </div>
   );
 };
