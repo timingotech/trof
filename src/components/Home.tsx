@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import {Users, BookOpen, Brain, Target, ArrowRight, Quote, Calendar, Clock } from 'lucide-react';
+import {Users, BookOpen, Brain, Target, ArrowRight, Calendar, Clock, Leaf  } from 'lucide-react';
 import { getRecentBlogs } from './BlogData'; // Import the function to get recent blogs
 import Image2 from '../assets/Image1.jpg'
 import Image1 from '../assets/Image2.jpg'
@@ -18,7 +18,6 @@ import Image13 from '../assets/Image13.jpg'
 
 const TROFHomepage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [currentStep, setCurrentStep] = useState(0);
   const [counters, setCounters] = useState({
     children: 0,
@@ -101,27 +100,32 @@ const TROFHomepage = () => {
 
   // Programs data
   const programs = [
-    {
-      icon: <Brain className="w-8 h-8" />,
-      title: "Child Protection Initiatives",
-      description: "Providing safe spaces for vulnerable children"
-    },
-    {
-      icon: <BookOpen className="w-8 h-8" />,
-      title: "Educational & Developmental Programs",
-      description: "Empowering bright minds with educational opportunities and scholarships to break the cycle of poverty."
-    },
-    {
-      icon: <Users className="w-8 h-8" />,
-      title: "Community Engagement & Advocacy",
-      description: "Building sustainable infrastructure and programs that create lasting positive change in local communities."
-    },
-    {
-      icon: <Target className="w-8 h-8" />,
-      title: "Youth Empowerment",
-      description: "Developing leadership skills and providing opportunities for young people to become agents of change."
-    }
-  ];
+  {
+    icon: <Brain className="w-8 h-8" />,
+    title: "Child Protection Initiatives",
+    description: "Providing safe spaces for vulnerable children"
+  },
+  {
+    icon: <BookOpen className="w-8 h-8" />,
+    title: "Educational & Developmental Programs",
+    description: "Empowering bright minds with educational opportunities and scholarships to break the cycle of poverty."
+  },
+  {
+    icon: <Users className="w-8 h-8" />,
+    title: "Community Engagement & Advocacy",
+    description: "Building sustainable infrastructure and programs that create lasting positive change in local communities."
+  },
+  {
+    icon: <Target className="w-8 h-8" />,
+    title: "Youth Empowerment",
+    description: "Developing leadership skills and providing opportunities for young people to become agents of change."
+  },
+  {
+    icon: <Leaf className="w-8 h-8" />,
+    title: "Climate Action",
+    description: "Promoting environmental sustainability, tree planting, and climate education to protect our planet for future generations."
+  }
+];
  
 
   // How it works steps
@@ -143,28 +147,7 @@ const TROFHomepage = () => {
       description: "Measuring outcomes and sharing success stories to inspire continued support and growth."
     }
   ];
-
-  // Testimonials data
-  const testimonials = [
-    {
-      quote: "TROF Foundation changed my life. Their mental health program helped me overcome depression and find purpose again.",
-      name: "Amina Johnson",
-      location: "Lagos, Nigeria",
-      avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b8b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
-    },
-    {
-      quote: "Thanks to the scholarship program, I'm now studying medicine and plan to serve my community as a doctor.",
-      name: "David Okafor",
-      location: "Abuja, Nigeria",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
-    },
-    {
-      quote: "The youth empowerment workshops gave me the confidence to start my own social enterprise.",
-      name: "Grace Mutua",
-      location: "Lagos, Nigeria",
-      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.3&auto=format&fit=crop&w=150&q=80"
-    }
-  ];
+ 
 
   // Auto-advance hero carousel
   useEffect(() => {
@@ -174,14 +157,7 @@ const TROFHomepage = () => {
     return () => clearInterval(timer);
   }, []);
 
-  // Auto-advance testimonials
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
-    }, 4000);
-    return () => clearInterval(timer);
-  }, []);
-
+  // Auto-advance testimonials 
   // Auto-advance steps
   useEffect(() => {
     const timer = setInterval(() => {
@@ -460,60 +436,6 @@ const TROFHomepage = () => {
         </div>
       </section>
 
-      {/* Impact Stories / Testimonials */}
-      <section className="py-20 bg-gradient-to-br from-sky-50 to-green-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-              Impact Stories
-            </h2>
-            <p className="text-xl text-gray-600">
-              Real stories from the lives we've touched
-            </p>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-2xl p-8 md:p-12 shadow-lg relative">
-              <Quote className="w-12 h-12 text-red-600 opacity-20 absolute top-4 left-4" />
-              
-              <div className="text-center">
-                <p className="text-xl md:text-2xl text-gray-700 mb-8 italic leading-relaxed">
-                  "{testimonials[currentTestimonial].quote}"
-                </p>
-                
-                <div className="flex items-center justify-center space-x-4">
-                  <img
-                    src={testimonials[currentTestimonial].avatar}
-                    alt={testimonials[currentTestimonial].name}
-                    className="w-16 h-16 rounded-full object-cover"
-                  />
-                  <div className="text-left">
-                    <div className="font-semibold text-gray-800 text-lg">
-                      {testimonials[currentTestimonial].name}
-                    </div>
-                    <div className="text-gray-600">
-                      {testimonials[currentTestimonial].location}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Testimonial Navigation */}
-            <div className="flex justify-center mt-8 space-x-2">
-              {testimonials.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentTestimonial(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentTestimonial ? 'bg-red-600' : 'bg-gray-300'
-                  }`}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Final CTA Section */}
       <section className="py-20 bg-gradient-to-r from-red-600 to-red-700 text-white">
