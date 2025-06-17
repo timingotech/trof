@@ -1,35 +1,13 @@
 import { useState, useEffect } from 'react';
-import { Heart, Shield, BookOpen, Users, Mail, ArrowRight, Star, Globe, HandHeart } from 'lucide-react';
+import { Heart, Shield, BookOpen, Users, Mail, ArrowRight, Star, Globe, HandHeart, Play } from 'lucide-react';
 import {Link} from 'react-router-dom';
+
 const About = () => {
-  const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [counters, setCounters] = useState({
     children: 0,
     communities: 0,
     testimonials: 0
   });
-
-  const testimonials = [
-    {
-      text: "TROF gave my daughter hope when we had none. The scholarship program changed our family's future forever.",
-      author: "Sarah M., Parent"
-    },
-    {
-      text: "Through TROF's safe space program, I learned I had rights and found my voice to speak against injustice.",
-      author: "Grace O., Beneficiary"
-    },
-    {
-      text: "The feeding program at our school means children can focus on learning instead of hunger.",
-      author: "Teacher Emmanuel"
-    }
-  ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, [testimonials.length]);
 
   useEffect(() => {
     const animateCounters = () => {
@@ -284,32 +262,46 @@ const About = () => {
             
             <div className="bg-white p-8 rounded-2xl shadow-lg">
               <div className="text-4xl font-bold text-red-600 mb-2">{counters.testimonials}+</div>
-              <div className="text-gray-800 font-semibold mb-2">Testimonials</div>
+              <div className="text-gray-800 font-semibold mb-2">Success Stories</div>
               <div className="text-gray-600">From grateful families</div>
             </div>
           </div>
 
-          {/* Testimonial Slider */}
-          <div className="bg-white p-8 rounded-2xl shadow-lg max-w-3xl mx-auto">
-            <div className="transition-all duration-500 ease-in-out">
-              <p className="text-lg text-gray-700 italic mb-4">
-                "{testimonials[currentTestimonial].text}"
-              </p>
-              <p className="text-red-600 font-semibold">
-                - {testimonials[currentTestimonial].author}
-              </p>
+          {/* YouTube Video Section */}
+          <div className="bg-white p-8 rounded-2xl shadow-lg max-w-4xl mx-auto">
+            <div className="mb-6">
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">See Our Work in Action</h3>
+              <p className="text-gray-600">Watch how we're making a difference in children's lives across our communities.</p>
             </div>
             
-            <div className="flex justify-center space-x-2 mt-6">
-              {testimonials.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentTestimonial(index)}
-                  className={`w-3 h-3 rounded-full transition-colors ${
-                    index === currentTestimonial ? 'bg-red-500' : 'bg-gray-300'
-                  }`}
-                />
-              ))}
+            <div className="relative overflow-hidden rounded-xl shadow-lg">
+              <div className="aspect-video">
+                <iframe
+                  src="https://www.youtube.com/embed/ME31cVwAQuc"
+                  title="Raymond Ofodu Foundation - Child Protection & Development"
+                  className="w-full h-full"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </div>
+            
+            <div className="mt-6 flex items-center justify-center space-x-4 text-sm text-gray-600">
+              <Play className="w-4 h-4 text-red-500" />
+              <span>Click to watch our impact story</span>
+            </div>
+            
+            <div className="mt-4">
+              <a 
+                href="https://www.youtube.com/watch?v=ME31cVwAQuc" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center space-x-2 text-red-600 hover:text-red-700 transition-colors"
+              >
+                <span>Watch on YouTube</span>
+                <ArrowRight className="w-4 h-4" />
+              </a>
             </div>
           </div>
         </div>
