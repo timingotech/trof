@@ -10,6 +10,7 @@ import DonatePage from './components/DonatePage'
 import JoinUs from './components/JoinUs'
 import AllBlogsPage from './components/AllBlogsPage'
 import SingleBlogPage from './components/SingleBlogPage'
+import ChildProtectionPage from './components/ChildProtection'
 function App() { 
   return (
     <div>
@@ -23,6 +24,7 @@ function App() {
         <Route path='/join-us' element={<JoinUs/>} /> 
         <Route path='/blogs' element={<AllBlogsPage/>} />
         <Route path='/blog/:id' element={<SingleBlogPage/>} />
+        <Route path='/child-protection' element={<ChildProtectionPage/>} />
       </Routes>
       <Footer/>
     </div>

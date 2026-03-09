@@ -1,7 +1,10 @@
 import { Mail, Linkedin, Globe, Award, Users, Heart, Code, Lightbulb } from 'lucide-react';
 import Obi from '../assets/Obi.jpg';
 import Ifeanyi from '../assets/Ifeanyi.jpg';
-import Ridwan from '../assets/Alfa.jpg';
+import Ridwan from '../assets/Ridwan_Oyenuga_Headshot.jpeg';
+import Henrietta from '../assets/Henrietta.jpeg';
+import Promise from '../assets/Promise-Lawson.jpeg';
+import Doris from '../assets/Doris-Ijeoma.PNG';
 
 const TeamsPage = () => {
   const teamMembers = [
@@ -68,7 +71,7 @@ const TeamsPage = () => {
       title: "Head of Technical Unit",
       subtitle: "Tech Entrepreneur, Mental Health Advocate & Youth Leader",
       image: Ridwan,  
-      fullBio: "Oyenuga Ridwan is a visionary tech entrepreneur, public servant, and youth advocate who is passionate about the intersection of mental health, innovation, and youth empowerment. As the Founder & CEO of SereniMind, one of Nigeria's fastest-growing mental health tech organizations, Ridwan has demonstrated exceptional leadership in building sustainable systems that improve lives, particularly within the youth demographic. Under his leadership, SereniMind has achieved remarkable milestones, ranking as the Top 2 Mental Health Organization in Nigeria and securing funding through multiple innovation grants and startup challenges, emerging as 1st Runner-Up out of 30 organizations. His visionary approach has led to strategic partnerships with prestigious international organizations including the Network of Africa Mental Health Advocates, Uganda Parliament in Mental Health Forum, Rotaract Club, Africa Podcaster and Voice Artists, and TROF Foundation. Ridwan's technical expertise and innovative mindset earned SereniMind acceptance into TVC Labs Accelerator as a Fellow among 200 organizations, marking it as one of Nigeria's top innovation hubs. He has successfully built a comprehensive platform that delivers AI-driven support, professional therapy booking, mental wellness content, and journaling tools to millions of Africans, demonstrating his commitment to making mental health resources accessible across the continent. Beyond his entrepreneurial success, Ridwan serves as State Coordinator for Ogun State in the Youth Creative Conference (YCC), where he was appointed to lead youth mobilization, skill empowerment, and community-based anti-violence campaigns in affiliation with the African Union and Ministry of Youth. His dedication to public service is further exemplified through his extensive involvement in student governance at Babcock University, where he has held multiple leadership positions including Director of Public Relations, Senator, Finance Committee Member, and Social Committee Secretary. Through these roles, he has influenced policies impacting over 50,000 students and engaged more than 200,000 stakeholders through strategic public communications and campaigns. Ridwan's exceptional contributions have been recognized through numerous awards and fellowships, including being selected as Entrepreneur of the Year from over 15,000 students at Babcock University, becoming a TVC Labs Fellow at Nigeria's top startup incubator, and graduating from the prestigious ALX Founder's Academy where he trained among Africa's most promising tech entrepreneurs. As a full-stack web developer and AI solutions builder with over 6 years of experience, Ridwan possesses deep technical expertise in frontend technologies like React and Next.js, backend infrastructure development, and AI-powered mental health tools including journaling bots and sentiment trackers. His innovative work extends to cutting-edge research in non-invasive blood glucose monitoring using breath analysis, showcasing his passion for scalable technology and digital transformation. His technical skills were further honed during his internship at UNILAG Design Studio, where he contributed to creative branding, digital health products, and innovation campaigns focused on youth-centric technology solutions.",
+      fullBio: "Oyenuga Ridwan Timilehin is a Nigerian tech entrepreneur, public sector collaborator, and youth leader working at the intersection of mental health, technology, and inclusive development. He is the Founder and Chief Executive Officer of SereniMind, a leading Nigerian mental health technology startup that is helping transform how young people across Africa access mental health support. Through SereniMind, Ridwan has built a digital ecosystem that provides AI-powered mental wellness tools, access to professional therapists, community engagement, and educational content aimed at improving psychological wellbeing among young people. The platform has grown rapidly to reach over 300,000 users and has developed partnerships with more than 10 organizations across Africa and globally. SereniMind has also been recognized among the Top 100 Health Companies in Nigeria and gained international visibility through several major media publications including BusinessDay, Daily Trust, Global South World (UK), Techparley, and The Guardian Nigeria. Ridwan also led the Africa Wellness Voices Initiative, a youth-led digital campaign that mobilized voices across 25 African countries to amplify conversations around mental health and youth wellbeing. The initiative reached an estimated audience of over 100 million people across digital platforms and media networks, positioning it as one of the largest youth-driven mental health awareness efforts on the continent. His work in entrepreneurship and innovation has earned him several recognitions. SereniMind emerged as First Runner-Up at the Babcock Innovation Challenge out of over 30 competing startups and received significant grant funding to expand its impact. Ridwan was also honored with the Entrepreneur of the Year Award at Babcock University from a pool of more than 15,000 students, recognizing his leadership in technology and social innovation. Beyond his startup work, Ridwan plays active roles in regional and international youth leadership networks. He currently serves as the Ogun State Coordinator for the Youth Creative Conference (YCC), an initiative affiliated with the African Union and Nigeria's Federal Ministry of Youth Development focused on empowering at-risk youth with skills and opportunities to prevent violence. He is also the President (Nigeria) of the African Youth Convention and Chairman of the House Committee on Youth Technology in the Youth Assembly of Nigeria, Lagos State. Ridwan's global engagement includes serving as a Global Youth Ambassador for Theirworld and an Ambassador for the AfriLead EduTourism Network where he advocates for climate action, education, and sustainable development across Africa. In 2025, he was selected as a Youth Representative in the World Food Forum Youth Representatives Programme under the United Nations Food and Agriculture Organization (FAO), further strengthening his role in international youth policy conversations. A trained computer scientist, Ridwan holds a Bachelor's degree in Computer Science from Babcock University and has received advanced training in artificial intelligence, machine learning, and project management through programs from IBM, Stanford University and DeepLearning.AI, and the University of California, Irvine. He is also a Fellow of the Harvard University Aspire Leaders Program and a graduate of the ALX Founders Academy supported by Mastercard. In addition to his work with SereniMind, Ridwan is the Founder of Timingotech, a technology venture focused on building AI-powered solutions for businesses and social enterprises. Through his work in technology, mentorship, and youth development programs, he has empowered hundreds of young people across Africa with skills in artificial intelligence, digital technology, and entrepreneurship. Ridwan continues to advocate for a future where technology, mental health support, and youth innovation come together to drive sustainable development across Africa.",
       specializations: [
         "Mental Health Technology & AI Solutions",
         "Full-Stack Web Development (React, Next.js)",
@@ -96,10 +99,102 @@ const TeamsPage = () => {
       contact: {
         email: "oyenugaridwan@gmail.com",
         phone: "+2349022013174",
-        linkedin: "https://www.linkedin.com/in/ridwan-timilehin-oyenuga-a66b9224b",
-        twitter: "www.x.com/timilehin_dev",
-        instagram: "www.instagram.com/timilehin_dev"
+        linkedin: "https://www.linkedin.com/in/ridwan-oyenuga-a66b9224b/",
+        twitter: "https://www.x.com/timilehin_dev",
+        instagram: "https://www.instagram.com/timilehin_dev/"
       }
+    },
+    {
+      name: "Henrietta Tochukwu Ezema",
+      title: "Program Support and Reporting Officer",
+      subtitle: "Program Coordination, Data Systems & Impact Reporting",
+      image: Henrietta,
+      fullBio: "Henrietta serves as the Program Support and Reporting Officer at The Raymond Ofodu Foundation (TROF), where she plays a pivotal role in strengthening the foundation's operational structure, documentation systems, and impact reporting processes. With a strong orientation toward organization, accountability, and measurable impact, she ensures that TROF's community engagement initiatives are properly coordinated, documented, and tracked. She works at the intersection of program implementation and data management, transforming outreach activities into structured, reportable outcomes that enhance transparency, credibility, and funding readiness. In her role, Henrietta oversees beneficiary registration systems, maintains accurate program databases, and ensures comprehensive documentation of all foundation activities. She develops standardized templates for attendance tracking, reporting, and data monitoring, enabling the foundation to operate with efficiency and clarity. She is also responsible for preparing weekly and monthly impact reports, tracking performance against targets, and identifying operational gaps early. Through structured reporting and organized record-keeping, she supports management decision-making and strengthens TROF's institutional capacity. Henrietta is known for her attention to detail, proactive communication style, and ability to bring structure to fast-paced community initiatives, ensuring that every outreach effort is not only impactful on the ground but also measurable and sustainable in the long term. Her commitment to accountability and operational excellence directly supports TROF's mission in child protection, education, and community advocacy.",
+      specializations: [
+        "Program Coordination & Administrative Support",
+        "Monitoring & Evaluation (M&E) Support",
+        "Data Collection & Beneficiary Registration Systems",
+        "Impact Reporting (Weekly & Monthly Reporting)",
+        "Documentation & Digital Records Management",
+        "Performance Tracking & Target Monitoring",
+        "Volunteer Coordination & Team Support",
+        "Database Management (Excel & Google Sheets)",
+        "Structured Reporting & Template Development",
+        "Internal Communication & Follow-Up Systems",
+        "Community Outreach Support",
+        "Organizational Systems Development"
+      ],
+      achievements: [
+        "Leads program support and reporting operations at TROF",
+        "Designs and manages beneficiary registration and program databases",
+        "Develops standardized templates for documentation and impact reporting",
+        "Prepares weekly and monthly impact reports for management decisions",
+        "Strengthens operational systems that enhance transparency and accountability"
+      ]
+    },
+    {
+      name: "Promise Lawson",
+      title: "Graphic Designer, Content Writer & Social Media Manager",
+      subtitle: "Visual Branding, Storytelling & Digital Media Strategy",
+      image: Promise,
+      fullBio: "Promise Lawson is a highly creative and results-driven Graphic Designer and Social Media Manager with over six years of professional experience in visual design, branding, and digital media strategy. At The Raymond Ofodu Foundation (TROF), she is responsible for shaping the organization's visual identity and strengthening its digital presence through compelling storytelling and strategic content development. She brings a strong blend of design expertise and marketing insight to the foundation's communication efforts, with a background that spans print media, digital campaigns, brand development, and social media management. Promise has served in lead design and social media roles at organizations such as Sedar Homes Smart Developers and Cardinal Photos, while also managing freelance projects for multiple brands, consistently reflecting clarity, creativity, and alignment with brand voice and audience engagement strategies. She holds a Bachelor of Arts degree in History and International Studies from the University of Nigeria and has further strengthened her technical expertise through professional training in graphic design. At TROF, she leverages her strong visual communication skills to amplify community outreach initiatives, promote advocacy campaigns, and ensure that the foundation's mission is communicated with professionalism, creativity, and measurable impact.",
+      specializations: [
+        "Graphic Design (CorelDRAW, Adobe Photoshop, Adobe Illustrator)",
+        "Visual Branding & Identity Development",
+        "Typography & Layout Design",
+        "Photo Editing & Visual Enhancement",
+        "Print & Digital Media Design",
+        "Presentation Design (Microsoft PowerPoint)",
+        "Social Media Management & Page Growth",
+        "Digital Advertising Strategy",
+        "Content Writing & Copy Development",
+        "Audience Engagement & Brand Voice Alignment",
+        "Campaign Design & Execution",
+        "Content Strategy & Trend Analysis",
+        "Visual Storytelling & Strategic Communication",
+        "Creative Problem-Solving & Innovative Thinking",
+        "Team Collaboration & Project Management"
+      ],
+      achievements: [
+        "Over six years of professional experience in design and social media",
+        "Leads visual identity and digital presence for TROF",
+        "Successfully managed branding and campaigns across multiple industries",
+        "Served in lead design and social media roles at Sedar Homes Smart Developers and Cardinal Photos",
+        "Holds a B.A. in History and International Studies from the University of Nigeria"
+      ]
+    },
+    {
+      name: "Doris Ijeoma Tagbo",
+      title: "Project Manager",
+      subtitle: "Administrative Systems, Financial Coordination & Internal Operations",
+      image: Doris,
+      fullBio: "Doris Ijeoma Tagbo serves as the Project Manager at The Raymond Ofodu Foundation (TROF), where she oversees administrative systems, financial coordination, documentation processes, and internal operations to ensure organizational efficiency and accountability. She is a highly organized and detail-oriented administrative professional with strong expertise in office management, financial record-keeping, and operational coordination. Doris brings several years of experience supporting business and program operations, with a proven ability to manage processes, track budgets, coordinate teams, and maintain structured documentation systems in fast-paced environments. Her professional background includes serving as a Sales and Administrative Officer at Princewill Electricals in Enugu, where she managed sales records, supplier coordination, invoicing, and stock documentation while supporting branch operations. During her National Youth Service Corps (NYSC) in Delta State, she served as Financial Secretary (Batch B Stream 1B), managing collective funds, tracking income and expenditures, coordinating budgeting for outreach initiatives, and ensuring transparent financial reporting. Doris holds a Bachelor of Arts degree in English and Literary Studies from the University of Nigeria, Nsukka, a background that strengthens her communication, documentation, and reporting capabilities. At TROF, she plays a central role in maintaining structured administrative systems, supporting financial tracking, coordinating internal communication, and ensuring that all activities are properly documented and aligned with the foundation's accountability standards.",
+      specializations: [
+        "Office Administration & Organizational Systems",
+        "Documentation & Record Keeping",
+        "Process Coordination & Workflow Management",
+        "Team Coordination & Supervisory Support",
+        "Time Management & Multitasking",
+        "Attention to Detail & Quality Control",
+        "Budget Tracking & Expense Monitoring",
+        "Invoice & Transaction Documentation",
+        "Transparent Financial Reporting",
+        "Fund Coordination for Community Initiatives",
+        "Written & Verbal Communication",
+        "Structured Reporting & Documentation",
+        "Problem-Solving & Decision Support",
+        "Interpersonal & Team Collaboration Skills",
+        "Microsoft Office (Word, Excel, PowerPoint)",
+        "Google Workspace (Docs, Sheets, Email)",
+        "Digital Record Organization Systems"
+      ],
+      achievements: [
+        "Oversees administrative systems and internal operations at TROF",
+        "Supports financial coordination, budgeting, and expense tracking",
+        "Previously served as Sales and Administrative Officer at Princewill Electricals, Enugu",
+        "Served as Financial Secretary during NYSC in Delta State (Batch B Stream 1B)",
+        "Holds a B.A. in English and Literary Studies from the University of Nigeria, Nsukka"
+      ]
     }
   ];
 

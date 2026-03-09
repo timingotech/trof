@@ -427,9 +427,6 @@ const TROFHomepage = () => {
               <img src={Image8} alt="Partner 3" className="w-32 h-16 object-contain" />
             </div>
             <div className="h-16 w-32 rounded-lg flex items-center justify-center">
-              <img src={Image9} alt="Partner 4" className="w-32 h-16 object-contain" />
-            </div>
-            <div className="h-16 w-32 rounded-lg flex items-center justify-center">
               <img src={Image10} alt="Partner 5" className="w-32 h-16 object-contain" />
             </div>
           </div>
