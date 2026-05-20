@@ -4,7 +4,6 @@ import Ifeanyi from '../assets/Ifeanyi.jpg';
 import Ridwan from '../assets/Ridwan_Oyenuga_Headshot.jpeg';
 import Henrietta from '../assets/Henrietta.jpeg';
 import Promise from '../assets/Promise-Lawson.jpeg';
-import Doris from '../assets/Doris-Ijeoma.PNG';
 
 const TeamsPage = () => {
   const teamMembers = [
@@ -163,39 +162,6 @@ const TeamsPage = () => {
         "Holds a B.A. in History and International Studies from the University of Nigeria"
       ]
     },
-    {
-      name: "Doris Ijeoma Tagbo",
-      title: "Project Manager",
-      subtitle: "Administrative Systems, Financial Coordination & Internal Operations",
-      image: Doris,
-      fullBio: "Doris Ijeoma Tagbo serves as the Project Manager at The Raymond Ofodu Foundation (TROF), where she oversees administrative systems, financial coordination, documentation processes, and internal operations to ensure organizational efficiency and accountability. She is a highly organized and detail-oriented administrative professional with strong expertise in office management, financial record-keeping, and operational coordination. Doris brings several years of experience supporting business and program operations, with a proven ability to manage processes, track budgets, coordinate teams, and maintain structured documentation systems in fast-paced environments. Her professional background includes serving as a Sales and Administrative Officer at Princewill Electricals in Enugu, where she managed sales records, supplier coordination, invoicing, and stock documentation while supporting branch operations. During her National Youth Service Corps (NYSC) in Delta State, she served as Financial Secretary (Batch B Stream 1B), managing collective funds, tracking income and expenditures, coordinating budgeting for outreach initiatives, and ensuring transparent financial reporting. Doris holds a Bachelor of Arts degree in English and Literary Studies from the University of Nigeria, Nsukka, a background that strengthens her communication, documentation, and reporting capabilities. At TROF, she plays a central role in maintaining structured administrative systems, supporting financial tracking, coordinating internal communication, and ensuring that all activities are properly documented and aligned with the foundation's accountability standards.",
-      specializations: [
-        "Office Administration & Organizational Systems",
-        "Documentation & Record Keeping",
-        "Process Coordination & Workflow Management",
-        "Team Coordination & Supervisory Support",
-        "Time Management & Multitasking",
-        "Attention to Detail & Quality Control",
-        "Budget Tracking & Expense Monitoring",
-        "Invoice & Transaction Documentation",
-        "Transparent Financial Reporting",
-        "Fund Coordination for Community Initiatives",
-        "Written & Verbal Communication",
-        "Structured Reporting & Documentation",
-        "Problem-Solving & Decision Support",
-        "Interpersonal & Team Collaboration Skills",
-        "Microsoft Office (Word, Excel, PowerPoint)",
-        "Google Workspace (Docs, Sheets, Email)",
-        "Digital Record Organization Systems"
-      ],
-      achievements: [
-        "Oversees administrative systems and internal operations at TROF",
-        "Supports financial coordination, budgeting, and expense tracking",
-        "Previously served as Sales and Administrative Officer at Princewill Electricals, Enugu",
-        "Served as Financial Secretary during NYSC in Delta State (Batch B Stream 1B)",
-        "Holds a B.A. in English and Literary Studies from the University of Nigeria, Nsukka"
-      ]
-    }
   ];
 
   return (
